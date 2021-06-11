@@ -61,3 +61,4 @@ Start Project
 
 // Run server
 > python manage.py runserver
+> python manage.py migrate
