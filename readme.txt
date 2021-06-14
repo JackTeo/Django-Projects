@@ -64,4 +64,27 @@ Start Project
 > ADD 'leads'
 > Setup database models in model.py
 > python manage.py makemigrations           // Creates model
-> python manage.py migrations               // Apply to SQlite
+> python manage.py migrate                  // Apply to SQlite
+
+// To register customer 'User' class
+> Navigate to djcrm folder
+> settings.py
+> add AUTH_USER_MODEL = 'leads.User'
+
+// To activate PYTHON SHELL for Query
+> env/Scripts/activate                      // deactivate
+> python manage.py shell                    // exit()
+
+// To create superuser
+> python manage.py createsuperuser
+
+// PYTHON Query
+> from django.contrib.auth import get_user_model    // import table from django library
+> User = get_user_model
+> User.objects.all()                                // view all User
+> from leads.models import Lead                     // import table Lead
+> Lead.objects.all()                                // view all Lead
+> admin_user = User.objects.get(username="admin")
+> admin_user                                        // print
+> agent = Agent.objects.create(user=admin_user)
+> admin_agent = Agent.objects.get(user__email="admin@admin.com")    // filter user by email
