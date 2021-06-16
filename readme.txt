@@ -88,3 +88,12 @@ Start Project
 > admin_user                                        // print
 > agent = Agent.objects.create(user=admin_user)
 > admin_agent = Agent.objects.get(user__email="admin@admin.com")    // filter user by email
+
+// admin.py
+from django.contrib import admin
+from .models import User, Lead, Agent
+admin.site.register(User)
+admin.site.register(Lead)
+admin.site.register(Agent)
+
+// views.py
